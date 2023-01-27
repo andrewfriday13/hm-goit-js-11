@@ -1,6 +1,6 @@
 import axios from 'axios';
 import notiflix from 'notiflix';
-import SimpleLightbox from "simplelightbox";
+
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 let page = 1
