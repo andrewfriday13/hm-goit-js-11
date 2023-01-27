@@ -10,7 +10,6 @@ try{
   const URL = `${URL_API}${KEY_API}&q=${getName}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${page}`
   const get = await axios.get(URL)
   return get.data
-
 } catch (err) {
   console.log(err)
   }
@@ -26,6 +25,7 @@ loadMore.addEventListener('click', loadMoreBtn)
 
 function searchBtn(evt) {
   evt.preventDefault()
+ page = 1
   const valueInputForm = inputForm.value
   fetchCountries(valueInputForm).then(data => {
     createCardImg(data)
