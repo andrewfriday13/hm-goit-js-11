@@ -1,6 +1,5 @@
 import axios from 'axios';
 import notiflix from 'notiflix';
-
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 let page = 1
@@ -46,7 +45,7 @@ function createCardImg(arr) {
   }
    notiflix.Notify.success(`це воно,${arr.total} найшов:)`)
   const make = arr.hits.map(({ tags, webformatURL, likes, views, comments, downloads }) => `
-  <a>
+  
   <div class="photo-card" ">
   <img src="${webformatURL}" alt="${tags}" loading="lazy" width= 120 />
   <div class="info">
@@ -63,7 +62,7 @@ function createCardImg(arr) {
       <b>Downloads</b>${downloads}
     </p>
   </div>
-</div></a>
+</div>
   `).join('')
 
   if (lengthArr.length >= 40) {
