@@ -19,19 +19,24 @@ const searchImg = document.querySelector('.search-form')
 const inputForm = document.querySelector('input')
 const gallery = document.querySelector('.gallery')
 const loadMore = document.querySelector('.load-more')
+const btnForm = document.querySelector('[type="submit"]')
+console.log(btnForm)
 
 searchImg.addEventListener('submit', searchBtn)
 loadMore.addEventListener('click', loadMoreBtn)
 
+
 function searchBtn(evt) {
-  evt.preventDefault()
- page = 1
   const valueInputForm = inputForm.value
+  evt.preventDefault()
+  if (valueInputForm.length === 0) {
+    return
+  }
+ page = 1
   fetchCountries(valueInputForm).then(data => {
     createCardImg(data)
   })
     .catch(data => console.log(data))
-
 }
 
 function createCardImg(arr) {
