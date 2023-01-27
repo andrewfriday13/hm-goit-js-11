@@ -20,15 +20,14 @@ const inputForm = document.querySelector('input')
 const gallery = document.querySelector('.gallery')
 const loadMore = document.querySelector('.load-more')
 const btnForm = document.querySelector('[type="submit"]')
-console.log(btnForm)
+
 
 searchImg.addEventListener('submit', searchBtn)
 loadMore.addEventListener('click', loadMoreBtn)
 
-
 function searchBtn(evt) {
-  const valueInputForm = inputForm.value
   evt.preventDefault()
+const valueInputForm = inputForm.value
   if (valueInputForm.length === 0) {
     return
   }
